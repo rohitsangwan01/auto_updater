@@ -18,9 +18,9 @@ Future<void> main(List<String> arguments) async {
             '.plugin_symlinks',
             'auto_updater_windows',
             'windows',
-            'WinSparkle-0.8.1',
+            'WinSparkle-0.9.2',
             'bin',
-            'generate_keys.bat',
+            'legacy_generate_keys.bat',
           ],
         );
 

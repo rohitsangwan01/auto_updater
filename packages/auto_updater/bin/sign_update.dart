@@ -23,9 +23,9 @@ SignUpdateResult signUpdate(List<String> args) {
             '.plugin_symlinks',
             'auto_updater_windows',
             'windows',
-            'WinSparkle-0.8.1',
+            'WinSparkle-0.9.2',
             'bin',
-            'sign_update.bat',
+            'legacy_generate_keys.bat',
           ],
         );
   List<String> arguments = List<String>.from(args);

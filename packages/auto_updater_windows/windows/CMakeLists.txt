@@ -17,7 +17,7 @@ cmake_policy(VERSION 3.14...3.25)
 set(PLUGIN_NAME "auto_updater_windows_plugin")
 
 # WinSparkle
-set(WIN_SPARKLE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/WinSparkle-0.8.1")
+set(WIN_SPARKLE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/WinSparkle-0.9.2")
 # Auto-detect architecture: use ARM64 for ARM64, otherwise x64
 # Prefer CMAKE_GENERATOR_PLATFORM (e.g. from cmake -A ARM64), then CMAKE_SYSTEM_PROCESSOR
 if(CMAKE_GENERATOR_PLATFORM STREQUAL "ARM64")

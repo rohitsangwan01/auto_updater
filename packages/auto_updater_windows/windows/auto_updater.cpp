@@ -1,4 +1,4 @@
-#include "WinSparkle-0.8.1/include/winsparkle.h"
+#include "WinSparkle-0.9.2/include/winsparkle.h"
 
 #include <flutter/event_channel.h>
 #include <flutter/method_channel.h>
