@@ -18,8 +18,17 @@ set(PLUGIN_NAME "auto_updater_windows_plugin")
 
 # WinSparkle
 set(WIN_SPARKLE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/WinSparkle-0.8.1")
-set(WIN_SPARKLE_BINARIES "${WIN_SPARKLE_DIR}/x64/Release/WinSparkle.dll")
-set(WIN_SPARKLE_LIBRARIES "${WIN_SPARKLE_DIR}/x64/Release/WinSparkle.lib")
+# Auto-detect architecture: use ARM64 for ARM64, otherwise x64
+# Prefer CMAKE_GENERATOR_PLATFORM (e.g. from cmake -A ARM64), then CMAKE_SYSTEM_PROCESSOR
+if(CMAKE_GENERATOR_PLATFORM STREQUAL "ARM64")
+  set(WIN_SPARKLE_ARCH "ARM64")
+elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "ARM64|aarch64")
+  set(WIN_SPARKLE_ARCH "ARM64")
+else()
+  set(WIN_SPARKLE_ARCH "x64")
+endif()
+set(WIN_SPARKLE_BINARIES "${WIN_SPARKLE_DIR}/${WIN_SPARKLE_ARCH}/Release/WinSparkle.dll")
+set(WIN_SPARKLE_LIBRARIES "${WIN_SPARKLE_DIR}/${WIN_SPARKLE_ARCH}/Release/WinSparkle.lib")
 
 # Any new source files that you add to the plugin should be added here.
 list(APPEND PLUGIN_SOURCES
